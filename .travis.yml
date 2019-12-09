@@ -28,11 +28,11 @@ jobs:
   include:
     - name: Lint
       stage: lint
-      os: linux/ppc64le
+      os: linux-ppc64le
       script: make lint
     - <<: *test-template
       name: Full Test on Linux
-      os: linux/ppc64le
+      os: linux-ppc64le
     - <<: *test-template
       name: Unit Test on MacOS
       os: osx
@@ -44,7 +44,7 @@ jobs:
       - make unittest
     - name: Deploy Release
       stage: deploy
-      os: linux/ppc64le
+      os: linux-ppc64le
       script:
         - make VERSION=${TRAVIS_TAG}  package
         - make deploy
