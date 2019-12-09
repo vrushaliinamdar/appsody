@@ -1,3 +1,5 @@
+os:
+  - linux-ppc64le
 language: go
 
 go:
